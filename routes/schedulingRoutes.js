@@ -21,9 +21,9 @@ router.post("/schedule", async (req, res) => {
     schedule.scheduleJob(scheduledTime, async function () {
       try {
         await Message.create({ message });
-        console.log("✅ Message inserted at scheduled time:", message);
+        console.log(" Message inserted at scheduled time:", message);
       } catch (err) {
-        console.error("❌ Error inserting scheduled message:", err);
+        console.error(" Error inserting scheduled message:", err);
       }
     });
 

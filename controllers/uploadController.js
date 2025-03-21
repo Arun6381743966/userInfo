@@ -3,9 +3,9 @@ const path = require("path");
 require("dotenv").config();
 
 exports.uploadFile = (req, res) => {
-  const workerPath = path.join(__dirname, "../workers/fileProcessor.js"); // ✅ Corrects path issue
+  const workerPath = path.join(__dirname, "../workers/fileProcessor.js");
 
-  const worker = new Worker(workerPath); // ✅ Uses absolute path
+  const worker = new Worker(workerPath);
 
   worker.on("message", (message) => {
     res.json({ message });
